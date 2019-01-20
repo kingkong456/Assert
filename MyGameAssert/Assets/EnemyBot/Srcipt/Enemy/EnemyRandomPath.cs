@@ -51,7 +51,6 @@ public class EnemyRandomPath : MonoBehaviour {
 
             //set next point
             m_controller.m_agent.SetDestination(nextPoint);
-            Debug.Log(Vector3.Distance(transform.position, nextPoint));
 
             //is end point yet?
             if(Vector3.Distance(transform.position, nextPoint) <= 1.5f)
@@ -76,9 +75,10 @@ public class EnemyRandomPath : MonoBehaviour {
         //Random new point
         float x = Random.Range((-1 * max_x_distance), max_x_distance);
         float z = Random.Range((-1 * max_z_distance), max_z_distance);
+        Debug.Log(x);
+        Debug.Log(z);
 
         Vector3 newPoint = transform.position + new Vector3(x, 0, z);
-        Debug.Log(newPoint);
 
         return newPoint;
     }
